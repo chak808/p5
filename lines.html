@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js'></script>
+    <style>
+      body{margin: 0};
+    </style>
+  </head>
+  <body>
+    <script>
+      function setup() {
+        createCanvas(window.innerWidth, window.innerHeight);
+        background('white');
+      }
+        var mousePress = 0;
+        var x1 = 0;
+        var x2 = 0;
+        var y1 = 0;
+        var y2 = 0;
+        stroke(126);
+        if (mouseIsPressed && mousePress == 0){
+          x1 = mouseX;
+          y1 = mouseY;
+          mousePress++;
+        }
+        else if (mouseIsPressed && mousePress == 1){
+          x2 = mouseX;
+          y2 = mouseY;
+          mousePress++;
+        }
+        else if (mouseIsPressed && mousePress == 2){
+          line(x1, y1, x2, y2);
+          mousePress = 0;
+        }
+    </script>
+  </body>
+</html>
